@@ -1,0 +1,20 @@
+<?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$course = $_POST['course'];
+
+
+$xml = new DOMDocument();
+$xml->load('Trainees.xml');
+
+$root = $xml->getElementsByTagName('Trainees1')->item(0);
+ 
+$Trainer = $xml->createElement('Trainer');
+$Trainer->appendChild($xml->createElement('name', $name));
+$Trainer->appendChild($xml->createElement('email' ,$email));
+$Trainer->appendChild($xml->createElement('course', $course));
+
+$root->appendChild($Trainer);
+$xml->save('Trainees.xml');
+
+?>
