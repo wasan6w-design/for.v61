@@ -5,16 +5,16 @@ $course = $_POST['course'];
 
 
 $xml = new DOMDocument();
-$xml->load('Trainees.xml');
+$xml->load('test1.xml');
 
-$root = $xml->getElementsByTagName('Trainees1')->item(0);
+$root = $xml->getElementsByTagName('tariner_List')->item(0);
  
-$Trainer = $xml->createElement('Trainer');
-$Trainer->appendChild($xml->createElement('name', $name));
-$Trainer->appendChild($xml->createElement('email' ,$email));
-$Trainer->appendChild($xml->createElement('course', $course));
+$tariner = $xml->createElement('tariner');
+$tariner->appendChild($xml->createElement('name', $name));
+$tariner->appendChild($xml->createElement('email' ,$email));
+$tariner->appendChild($xml->createElement('course', $course));
 
-$root->appendChild($Trainer);
-$xml->save('Trainees.xml');
+$root->appendChild($tariner);
+$xml->save('test1.xml');
 
 ?>
